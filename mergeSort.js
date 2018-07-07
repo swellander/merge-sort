@@ -1,10 +1,9 @@
 const mergeSort = (arr) => {
   if (arr.length < 2) return arr;
   else {
-    const firstHalf = arr.slice(0, arr.length/2);
-    const secondHalf = arr.slice(arr.length/2);
-    const left = mergeSort(firstHalf);
-    const right = mergeSort(secondHalf);
+    const middle = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, middle));
+    const right = mergeSort(arr.slice(middle));
     let iR = 0;
     return left.reduce((sorted, curr, i) => {
       if (!right[iR]) {
